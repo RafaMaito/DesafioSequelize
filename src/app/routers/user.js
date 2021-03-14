@@ -1,24 +1,24 @@
 import { Router } from 'express';
 
 import UserController from '../controllers/UserController';
-import validedeUserId from '../middlewares/validadeUserId';
-import validadeUserParams from '../middlewares/validadeUserParams';
-import validadeUser from '../middlewares/validadeUser';
-import validadeIndex from '../middlewares/validadeIndex';
+import validateUserId from '../middlewares/validateUserId';
+import validateUserParams from '../middlewares/validateUserParams';
+import validateUser from '../middlewares/validateUser';
+import validateIndex from '../middlewares/validateIndex';
 
 const routes = new Router();
 
-routes.get('/user', validadeIndex, UserController.index);
-routes.get('/user/:uid', [validedeUserId, validadeUser], UserController.show);
-routes.post('/user', validadeUserParams, UserController.store);
+routes.get('/user', validateIndex, UserController.index);
+routes.get('/user/:uid', [validateUserId, validateUser], UserController.show);
+routes.post('/user', validateUserParams, UserController.store);
 routes.put(
   '/user/:uid',
-  [validedeUserId, validadeUserParams, validadeUser],
+  [validateUserId, validateUserParams, validateUser],
   UserController.update
 );
 routes.delete(
   '/user/:uid',
-  [validedeUserId, validadeUser],
+  [validateUserId, validateUser],
   UserController.delete
 );
 
