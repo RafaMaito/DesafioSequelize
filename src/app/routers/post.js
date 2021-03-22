@@ -9,7 +9,11 @@ import validatePost from '../middlewares/validatePost';
 import validateUser from '../middlewares/validateUser';
 import validateIndex from '../middlewares/validateIndex';
 
+import validateToken from '../middlewares/auth';
+
 const routes = new Router();
+
+routes.use(validateToken);
 
 routes.get('/post', validateIndex, PostController.index);
 routes.get('/post/:id', [validatePostId], PostController.show);

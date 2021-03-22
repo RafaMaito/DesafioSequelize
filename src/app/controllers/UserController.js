@@ -32,11 +32,11 @@ class UserController {
   }
 
   async store(request, response) {
-    const { name, email } = request.body;
+    const { name, email, password } = request.body;
 
     const uid = uuidv4();
 
-    const user = await User.create({ uid, name, email });
+    const user = await User.create({ uid, name, email, password });
 
     return response.json(user);
   }
