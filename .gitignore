@@ -4,3 +4,5 @@
 
 ./coverage
 *.lcov
+/__tests__/*.sqlite
+/__tests__/database.sqlite-journal

@@ -6,7 +6,7 @@ export default async (request, response, next) => {
   const authHeader = request.headers.authorization;
   console.log(authHeader);
   if (!authHeader) {
-    return response.status(401).json({ message: 'Invalid Token' });
+    return response.status(401).json({ message: 'Invalid Token ' });
   }
 
   const [, token] = authHeader.split(' ');

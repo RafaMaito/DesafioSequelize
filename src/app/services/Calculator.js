@@ -1,4 +1,3 @@
-/* eslint-disable radix */
 export default class Calculator {
   sum(value1, value2) {
     const v1 =

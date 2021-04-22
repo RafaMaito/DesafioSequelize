@@ -1,5 +1,5 @@
 import user from './user';
-import post from './post';
 import auth from './auth';
-
-export default [user, post, auth];
+import post from './post';
+// the order matters
+export default [user, auth, post];
